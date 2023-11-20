@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom"
+import {message} from "antd"
 
 const Login = () => {
 
@@ -19,13 +20,17 @@ const authenticate = async (e)=>{
     try {
          const res =  await axios.post("http://localhost:9000/api/auth/login",{email,password})
 
-         console.log(res.data);
-         navigate("/market")
-         console.log()
+         if(res.data){
+          message.success("user loged in")
+         }
+        
+           navigate("/market")
+
+       
 
     } catch (error) {
          console.log(error);
-         console.log("user dosen't exist");
+         message.error("user does not exist");
     }
 }
 

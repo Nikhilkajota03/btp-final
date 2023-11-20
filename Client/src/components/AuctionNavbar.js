@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavLink  } from "react-router-dom";
+import Logout from '../Logout';
 
-const Navbar = () => {
+const AuctionNavbar = () => {
   return (
     <>
          <nav id="nav" className="fixed inset-x-0 top-0 flex flex-row justify-between z-10 text-white  bg-transparent">
@@ -14,9 +15,7 @@ const Navbar = () => {
 <div className="p-4 hidden md:flex flex-row justify-between font-bold">
     <NavLink  id="hide-after-click" to="/market" className="mx-4 text-lg  hover:text-purple-500  border-b-2 border-transparent hover:border-b-2 hover:border-purple-300 transition duration-500">Market Place</NavLink>
     <NavLink  id="hide-after-click" to="/auction" className="mx-4 text-lg  hover:text-purple-500  border-b-2 border-transparent hover:border-b-2 hover:border-purple-300 transition duration-500">Auction</NavLink>
-    {/* <NavLink  to="/contact" className="mx-4 text-lg border-b-2 border-transparent  hover:text-purple-500 hover:border-b-2 hover:border-purple-300 transition duration-500">Help</NavLink> */}
-    <NavLink  id="hide-after-click" to="/login" className="mx-4 text-lg  hover:text-purple-500  border-b-2 border-transparent hover:border-b-2 hover:border-purple-300 transition duration-500">Login </NavLink>
-    <NavLink  to="/signin" className="mx-4 text-lg border-b-2 border-transparent hover:text-purple-500  hover:border-b-2 hover:border-purple-300 transition duration-500">Register</NavLink>
+    <Logout/>
     
 </div>
 
@@ -34,4 +33,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default AuctionNavbar
